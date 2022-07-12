@@ -19,7 +19,6 @@ def parse_url(text):
             content = re.sub('【','\n【',content1.strip())
             f.write(content)
 
-
 if __name__ == '__main__':
     url = 'https://www.daodejing.org/'
     resp = url_download(url)
