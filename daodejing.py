@@ -2,13 +2,13 @@ import re
 import requests
 from lxml import etree
 
-
+#下载网页
 def url_download(url):
     res = requests.get(url)
     res.encoding = 'gbk'
     return res.text
 
-
+#解析网页
 def parse_url(text):
     file = r'D:\学习\编程\练习\2022\20220712-爬取道德经网页\道德经.txt'
     se = etree.HTML(text)
@@ -18,6 +18,7 @@ def parse_url(text):
             content1 = "".join(re.findall('[^〖〗]',t))
             content = re.sub('【','\n【',content1.strip())
             f.write(content)
+
 
 if __name__ == '__main__':
     url = 'https://www.daodejing.org/'
