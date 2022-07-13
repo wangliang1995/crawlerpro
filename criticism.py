@@ -1,6 +1,7 @@
 import random
 import datetime
 
+#模板
 def criticism_moudle(to_name,beginbody,mainbody,endbody,from_name,datestr):
      maincontent = '''
 亲爱的{}：
@@ -13,7 +14,7 @@ def criticism_moudle(to_name,beginbody,mainbody,endbody,from_name,datestr):
     '''.format(to_name,beginbody,mainbody,endbody,from_name,datestr)
 
      return maincontent
-
+#获取开头
 def get_beginbody():
     file = r'D:\学习\编程\练习\2022\20220713-检讨书生成\begin.txt'
     with open(file,'r',encoding='utf-8') as f:
@@ -22,7 +23,7 @@ def get_beginbody():
 
     return begintxt
 
-
+#获取正文
 def get_mainbody(num):
     maintxts = ""
     file = r'D:\学习\编程\练习\2022\20220713-检讨书生成\content.txt'
@@ -33,7 +34,8 @@ def get_mainbody(num):
             maintxts = maintxts + random.choice(linelist) + '    '
 
     return maintxts
-
+    
+#获取结尾
 def get_endbody():
     file = r'D:\学习\编程\练习\2022\20220713-检讨书生成\end.txt'
     with open(file,'r',encoding='utf-8') as f:
